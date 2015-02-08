@@ -138,8 +138,98 @@
             </pre>
             <h2>_.sortBy</h2>
             <pre>
-                <code>_.<mark>sortBy</mark>(colors);</code>
-                <code><mark class="comment">["green", "red", "white"]</mark></code>
+                <code>_.<mark>sortBy</mark>(colors, "length");</code>
+                <code><mark class="comment">["red", "green", "white"]</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Functional / Object Oriented</h2>
+            <p>Both approaches _.UNDERSCORE_FUNCTION(obj) and _(obj).UNDERSCORE_FUNCTION() are correct</p>
+            <pre>
+                <code>_.<mark>sortBy</mark>(_.<mark>uniq</mark>( _.<mark>pluck</mark>(chairs, 'color')),  "length");</code>
+                <code><mark class="comment">["red", "green", "white"]</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Functional / Object Oriented</h2>
+            <pre>
+                <code>var colorSorting = _.<mark>chain</mark>(chairs)</code>
+                <code>.<mark>pluck</mark>("color")</code>
+                <code>.<mark>uniq</mark>()</code>
+                <code>.<mark>sortBy</mark>("length")</code>
+                <code>.<mark>value</mark>();</code>
+                <code>colorSorting;</code>
+                <code><mark class="comment">["red", "green", "white"]</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Objects</h2>
+TODO
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Bind / context</h2>
+TODO
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>_.template</h2>
+            <pre>
+                <code>var templ = _.<mark>template</mark>("&lt;h2&gt;&lt;%= name %&gt; is clever.&lt;/h2&gt;");</code>
+                <code>templ({ name: "Adam" });</code>
+                <code><mark class="comment">&lt;h2&gt;Adam is clever.&lt;/h2&gt;</mark></code>
+            </pre>
+            <ul>
+                <li><code>&lt;% %&gt;</code> executes code</li>
+                <li><code>&lt;%= %&gt;</code> prints value </li>
+                <li><code>&lt;%- %&gt;</code> prints escaped value</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>_.template is customizable</h2>
+            <pre>
+                <code>_.<mark>templateSettings</mark> = {</code>
+                <code>    evaluate: /<\$([\s\S]+?)\$>/g,</code>
+                <code>    interpolate : /{{([\s\S]+?)}}/g,</code>
+                <code>    escape      : /<\$-([\s\S]+?)\$>/g</code>
+                <code>};</code>
+                <code>var templ = _.template("&lt;h2&gt;{{ name }} is clever.&lt;/h2&gt;");</code>
+                <code><mark class="comment">&lt;h2&gt;Adam is clever.&lt;/h2&gt;</mark></code>
+            </pre>
+        </div>
+    </section>
+
+
+    <section class="slide">
+        <div>
+            <h2>More useful stuff</h2>
+            <ul>
+                <li>_.<code>mixin(object)</code> with this function you can extend Underscore</li>
+            </ul>
+            <pre>
+                <code>_.mixin({ addDay: function (string) {</code>
+                <code>    return string + " " + (new Date()).getDay();</code>
+                <code>}});</code>
+            </pre>
+            <pre>
+                <code>_.addDay('today's day number is');</code>
+                <code><mark class="comment">"today's day number is 1"</mark></code>
             </pre>
         </div>
     </section>
@@ -148,20 +238,13 @@
         <div>
             <h2>Other little useful things</h2>
             <ul>
-                <li>_.<code>isFunction</code></li> instead of <pre><code>typeof x === 'function'</code></pre>
-                <li>_.<code>noop</code></li> instead of <pre><code>function (){return undefined;}</code></pre>
+                <li>_.<code>isFunction(fn)</code> instead of <code>typeof fn === 'function'</code></li>
+                <li>_.<code>noop()</code> instead of <code>function (){return undefined;}</code></li>
+                <li>_.<code>invoke(list, method, *arguments)</code> calls the given method name with every element from the list</li>
+                <li>_.<code>has(obj, key)</code> similiar to hasOwnProperty (falsy values safe)</li>
+                <li>_.<code>defer(fn)</code> call the function as soon as the call stack is cleared</li>
+                <li>_.<code>isEqual(object1, object2)</code> compares two object and checks if they are identical</li>
             </ul>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Functional / Object Oriented</h2>
-            <pre>
-                <code>_.reject(myArray, function(num){ return num % 2 == 0; });</code>
-            </pre>
-            <pre>
-                <code>_(myArray).reject(function(num){ return num % 2 == 0; });</code>
-            </pre>
         </div>
     </section>
 
