@@ -22,103 +22,105 @@
                 <img src="themes/warsawjs/pictures/logo.png">
             </div>
             <div class="content">
-                <h2>WarsawJS Presentation Template</h2>
-                <p>Author Name <a href="http://twitter.com/author">@author</a>
+                <h2>Make your life easier - use underscore.js</h2>
+                <p>Adam Miniuk <a href="https://plus.google.com/+AdamMiniuk">+AdamMiniuk</a>
             </div>
         </div>
     </section>
 
     <section class="slide">
         <div>
-            <h2>Plain Text on Your Slides</h2>
+            <h2>Can my coding life be easier?</h2>
 
-            <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco
-                laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in
-                reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.
-            </p>
-        </div>
-    </section>
 
-    <section class="slide">
-        <div>
-            <h2>All Kind of Lists</h2>
-            <ol>
-                <li>Simple lists are marked with bullets</li>
-                <li>Ordered lists begin with a number</li>
-                <li>You can even nest lists one inside another
-                    <ul>
-                        <li>Or mix their types</li>
-                        <li>But do not go too far</li>
-                        <li>Otherwise audience will be bored</li>
-                    </ul>
-                </li>
-                <li>Look, seven rows exactly!</li>
-            </ol>
-        </div>
-    </section>
-
-    <section class="slide">
-        <div>
-            <h2>JavaScript Samples</h2>
-            <pre>
-                <code><mark class="comment">// Crockford style IIFE</mark></code>
-                <code>(function () {</code>
-                <code>  var <mark>someVar</mark> = 'value';</code>
-                <code>  console.<mark class="important">log</mark>(someVar);</code>
-                <code>}());</code>
+	    <pre>
+                <code>getElementsByClassName = function(cl) {</code>
+                <code>  var retnode = [];</code>
+                <code>  var elem = this.getElementsByTagName('*');</code>
+                <code>  for (var i = 0; i < elem.length; i++) {</code>
+                <code>    if((' ' + elem[i].className + ' ').indexOf(' ' + cl + ' ') > -1) retnode.push(elem[i]);</code>
+                <code>  }</code>
+                <code>  return retnode;</code>
+                <code>}; </code>
             </pre>
         </div>
     </section>
+
     <section class="slide">
         <div>
-            <h2>Even Tables</h2>
-            <table>
-                <tr>
-                    <th scope="col">Locavore</th>
-                    <th>Umami</th>
-                    <th>Helvetica</th>
-                    <th>Vegan</th>
-                </tr>
-                <tr>
-                    <th scope="row">Fingerstache</th>
-                    <td>Kale</td>
-                    <td>Chips</td>
-                    <td>Keytar</td>
-                </tr>
-                <tr>
-                    <th scope="row">Sriracha</th>
-                    <td>Gluten-free</td>
-                    <td>Ennui</td>
-                    <td>Keffiyeh</td>
-                </tr>
-                <tr>
-                    <th scope="row">Thundercats</th>
-                    <td>Jean</td>
-                    <td>Shorts</td>
-                    <td>Biodiesel</td>
-                </tr>
-                <tr>
-                    <th scope="row">Terry</th>
-                    <td>Richardson</td>
-                    <td>Swag</td>
-                    <td>Blog</td>
-                </tr>
-            </table>
-            <p>It’s good to have information organized.</p>
+            <h2>You know that!</h2>
+            <p>If you have ever used <a href="http://jquery.com/">jQuery</a></p>
+            <pre>
+                <code>$('.myClass');</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>What Underscore.js is?</h2>
+            <p class="note">As we can read on the <a href="http://underscorejs.org/">underscorejs.org</a></p>
+            <p> It’s the answer to the question:</p>
+            <figure>
+                <blockquote><p>If I sit down in front of a blank HTML page, and want to start being productive immediately, what do I need?</p></blockquote>
+            </figure>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>How to start?</h2>
+            <pre>
+                <code>&lt;script src="<mark>//underscorejs.org/underscore-min.js</mark>"&gt;</code>
+                <code>&lt;/script&gt;</code>
+                <code><mark class="comment">&lt;!--Then we have object called _ --&gt;</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>What's next?</h2>
+            <p>Underscore gives us some functions to use:</p>
+            <pre>
+                <code><mark>each</mark>, <mark>map</mark>, <mark>reduce</mark>, <mark>reduceRight</mark>, <mark>find</mark>, <mark>filter</mark>, <mark>where</mark>, </code>
+                <code><mark>findWhere</mark>, <mark>reject</mark>, <mark>every</mark>, <mark>some</mark>, <mark>contains</mark>, <mark>invoke</mark>, </code>
+                <code><mark>pluck</mark>, <mark>max</mark>, <mark>min</mark>, <mark>sortBy</mark>, <mark>groupBy</mark>, <mark>indexBy</mark>, <mark>countBy</mark>, </code>
+                <code><mark>shuffle</mark>, <mark>sample</mark>, <mark>toArray</mark>, <mark>size</mark>, <mark>partition</mark></code>
+            </pre>
+            <p class="note">These are only collection functions.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Give me some examples!</h2>
+            <pre>
+                <code><mark class="comment">TODO</mark></code>
+            </pre>
         </div>
     </section>
 
     <section class="slide cover">
         <div>
-            <img src="./themes/warsawjs/pictures/bigphoto.jpg" alt="">
+            <code>What about performance?</code>
+            <img src="./themes/warsawjs/pictures/jsperf_each.jpg" alt="">
         </div>
     </section>
 
-    <section class="slide shout">
+    <section class="slide">
         <div>
-            <h2>See you next month at WarsawJS</h2>
+            <h2>Alternatives?</h2>
+            <ul>
+                <li><a href="https://lodash.com/">Lo-Dash</a></li>
+                <li><a href="http://danieltao.com/lazy.js/">Lazy.js</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide shout grow">
+        <div>
+            <h2>Thank you!</h2>
         </div>
     </section>
 
