@@ -22,7 +22,7 @@
                 <img src="themes/warsawjs/pictures/logo.png">
             </div>
             <div class="content">
-                <h2>Make your life easier - use underscore.js</h2>
+                <h2>Make your life easier - use Underscore.js</h2>
                 <p>Adam Miniuk <a href="https://plus.google.com/+AdamMiniuk">+AdamMiniuk</a>
             </div>
         </div>
@@ -102,8 +102,8 @@
         <div>
             <h2>_.map</h2>
             <pre>
-                <code>var chairs = [{color: 'red', width: 150},</code>
-                <code>{color: 'green', width: 130}, {color: 'white', width: 160}];</code>
+                <code>var chairs = [{color: "red", width: 150},</code>
+                <code>{color: "green", width: 130}, {color: "white", width: 160}];</code>
                 </pre>
                 <pre>
                 <code>_.<mark>map</mark>(chairs, function(chair) {</code>
@@ -118,12 +118,12 @@
         <div>
             <h2>_.pluck</h2>
             <pre>
-                <code>var chairs = [{color: 'red', width: 150},</code>
-                <code>{color: 'green', width: 130},</code>
-                <code>{color: 'green', width: 130}, {color: 'white', width: 160}];</code>
+                <code>var chairs = [{color: "red", width: 150},</code>
+                <code>{color: "green", width: 130},</code>
+                <code>{color: "green", width: 130}, {color: "white", width: 160}];</code>
             </pre>
             <pre>
-                <code>var colors = _.<mark>pluck</mark>(chairs, 'color');</code>
+                <code>var colors = _.<mark>pluck</mark>(chairs, "color");</code>
                 <code><mark class="comment">["red", "green", "green", "white"]</mark></code>
             </pre>
         </div>
@@ -149,7 +149,7 @@
             <h2>Functional / Object Oriented</h2>
             <p>Both approaches _.UNDERSCORE_FUNCTION(obj) and _(obj).UNDERSCORE_FUNCTION() are correct</p>
             <pre>
-                <code>_.<mark>sortBy</mark>(_.<mark>uniq</mark>( _.<mark>pluck</mark>(chairs, 'color')),  "length");</code>
+                <code>_.<mark>sortBy</mark>(_.<mark>uniq</mark>( _.<mark>pluck</mark>(chairs, "color")),  "length");</code>
                 <code><mark class="comment">["red", "green", "white"]</mark></code>
             </pre>
         </div>
@@ -179,7 +179,7 @@
                 <code>var chair = { color: "red", width: 100 };</code>
                 <code>_.<mark>extend</mark>(chair, { color: "green" } );</code>
                 <code><mark class="comment">{ color: "green", width: 100 }</mark></code>
-                <code>_.<mark>defaults</mark>(chair, {color: 'white', legs: 4} );</code>
+                <code>_.<mark>defaults</mark>(chair, {color: "white", legs: 4} );</code>
                 <code><mark class="comment">{color: "green", width: 100, legs: 4}</mark></code>
             </pre>
         </div>
@@ -192,8 +192,8 @@
 You can use <code>bind</code> and <code>bindAll</code> to invoke particular method.</p>
             <pre>
                 <code>_.bind(function(name) {</code>
-                <code>    return name + ' chose ' + this.color + ' chair.'</code>
-                <code>}, chair, 'Adam')();</code>
+                <code>    return name + " chose " + this.color + " chair."</code>
+                <code>}, chair, "Adam")();</code>
                 <code><mark class="comment">"Adam chose green chair."</mark></code>
             </pre>
         </div>
@@ -243,7 +243,7 @@ You can use <code>bind</code> and <code>bindAll</code> to invoke particular meth
                 <code>}});</code>
             </pre>
             <pre>
-                <code>_.addDay('today's day number is');</code>
+                <code>_.addDay("today's day number is");</code>
                 <code><mark class="comment">"today's day number is 1"</mark></code>
             </pre>
         </div>
@@ -266,20 +266,13 @@ You can use <code>bind</code> and <code>bindAll</code> to invoke particular meth
         <div>
             <h2>Other little useful things</h2>
             <ul>
-                <li>_.<code>isFunction(fn)</code> instead of <code>typeof fn === 'function'</code></li>
+                <li>_.<code>isFunction(fn)</code> instead of <code>typeof fn === "function"</code></li>
                 <li>_.<code>has(obj, key)</code> similiar to hasOwnProperty (falsy values safe)</li>
                 <li>_.<code>isEqual(object1, object2)</code> compares two object and checks if they are identical</li>
                 <li>_.<code>noop()</code> instead of <code>function (){return undefined;}</code></li>
                 <li>_.<code>invoke(list, method, *arguments)</code> calls the given method name with every element from the list</li>
                 <li>_.<code>defer(fn)</code> call the function as soon as the call stack is cleared</li>
             </ul>
-        </div>
-    </section>
-
-    <section class="slide cover">
-        <div>
-            <code>What about performance?</code>
-            <img src="./themes/warsawjs/pictures/jsperf_each.jpg" alt="">
         </div>
     </section>
 
@@ -290,6 +283,14 @@ You can use <code>bind</code> and <code>bindAll</code> to invoke particular meth
                 <li><a href="https://lodash.com/">Lo-Dash</a></li>
                 <li><a href="http://danieltao.com/lazy.js/">Lazy.js</a></li>
             </ul>
+        </div>
+    </section>
+
+    <section class="slide cover">
+        <div>
+            <code>What about performance?</code>
+            <img src="./themes/warsawjs/pictures/jsperf_each.jpg" alt="">
+            <a href="http://jsperf.com/underscore-lazy-js-lodash-native">Ask jsPerf!</a>
         </div>
     </section>
 
