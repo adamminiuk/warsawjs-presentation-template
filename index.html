@@ -159,12 +159,11 @@
         <div>
             <h2>Functional / Object Oriented</h2>
             <pre>
-                <code>var colorSorting = _.<mark>chain</mark>(chairs)</code>
+                <code>_.<mark>chain</mark>(chairs)</code>
                 <code>.<mark>pluck</mark>("color")</code>
                 <code>.<mark>uniq</mark>()</code>
                 <code>.<mark>sortBy</mark>("length")</code>
                 <code>.<mark>value</mark>();</code>
-                <code>colorSorting;</code>
                 <code><mark class="comment">["red", "green", "white"]</mark></code>
             </pre>
         </div>
@@ -173,14 +172,30 @@
     <section class="slide">
         <div>
             <h2>Objects</h2>
-TODO
+            <p>
+            There are so many functions dedicated to object. Let's just try an example.
+            </p>
+            <pre>
+                <code>var chair = { color: "red", width: 100 };</code>
+                <code>_.<mark>extend</mark>(chair, { color: "green" } );</code>
+                <code><mark class="comment">{ color: "green", width: 100 }</mark></code>
+                <code>_.<mark>defaults</mark>(chair, {color: 'white', legs: 4} );</code>
+                <code><mark class="comment">{color: "green", width: 100, legs: 4}</mark></code>
+            </pre>
         </div>
     </section>
 
     <section class="slide">
         <div>
             <h2>Bind / context</h2>
-TODO
+            <p>Many of Underscore functions have possibility to bind a context (including <code>each</code>).
+You can use <code>bind</code> and <code>bindAll</code> to invoke particular method.</p>
+            <pre>
+                <code>_.bind(function(name) {</code>
+                <code>    return name + ' chose ' + this.color + ' chair.'</code>
+                <code>}, chair, 'Adam')();</code>
+                <code><mark class="comment">"Adam chose green chair."</mark></code>
+            </pre>
         </div>
     </section>
 
@@ -236,14 +251,27 @@ TODO
 
     <section class="slide">
         <div>
+            <h2>Many helpers</h2>
+            <ul>
+                <li>_.<code>random(min, max)</code> Returns a random integer between min and max.</li>
+                <li>_.<code>shuffle(list)</code> Returns a shuffled copy of the list.</li>
+                <li>_.<code>invert(object)</code> Returns a copy of the object where the keys have become the values and the values the key.</li>
+                <li>_.<code>range([start], stop, [step])</code>  A function to create flexibly-numbered lists of integers.</li>
+                <li>_.<code>pairs(object)</code>  Convert an object into a list of [key, value] pairs.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
             <h2>Other little useful things</h2>
             <ul>
                 <li>_.<code>isFunction(fn)</code> instead of <code>typeof fn === 'function'</code></li>
+                <li>_.<code>has(obj, key)</code> similiar to hasOwnProperty (falsy values safe)</li>
+                <li>_.<code>isEqual(object1, object2)</code> compares two object and checks if they are identical</li>
                 <li>_.<code>noop()</code> instead of <code>function (){return undefined;}</code></li>
                 <li>_.<code>invoke(list, method, *arguments)</code> calls the given method name with every element from the list</li>
-                <li>_.<code>has(obj, key)</code> similiar to hasOwnProperty (falsy values safe)</li>
                 <li>_.<code>defer(fn)</code> call the function as soon as the call stack is cleared</li>
-                <li>_.<code>isEqual(object1, object2)</code> compares two object and checks if they are identical</li>
             </ul>
         </div>
     </section>
