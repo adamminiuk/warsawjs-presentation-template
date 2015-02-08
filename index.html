@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>WarsawJS Presentation Template</title>
+    <title>WarsawJS - use underscore.js</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=792, user-scalable=no">
@@ -92,11 +92,75 @@
         </div>
     </section>
 
-    <section class="slide">
+    <section class="slide shout">
         <div>
             <h2>Give me some examples!</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>_.map</h2>
             <pre>
-                <code><mark class="comment">TODO</mark></code>
+                <code>var chairs = [{color: 'red', width: 150},</code>
+                <code>{color: 'green', width: 130}, {color: 'white', width: 160}];</code>
+                </pre>
+                <pre>
+                <code>_.<mark>map</mark>(chairs, function(chair) {</code>
+                <code>    return chair.color;</code>
+                <code>});</code>
+                <code><mark class="comment">["red", "green", "white"]</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>_.pluck</h2>
+            <pre>
+                <code>var chairs = [{color: 'red', width: 150},</code>
+                <code>{color: 'green', width: 130},</code>
+                <code>{color: 'green', width: 130}, {color: 'white', width: 160}];</code>
+            </pre>
+            <pre>
+                <code>var colors = _.<mark>pluck</mark>(chairs, 'color');</code>
+                <code><mark class="comment">["red", "green", "green", "white"]</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>_.uniq</h2>
+            <pre>
+                <code>colors = _.<mark>uniq</mark>(colors);</code>
+                <code><mark class="comment">["green", "red", "white"]</mark></code>
+            </pre>
+            <h2>_.sortBy</h2>
+            <pre>
+                <code>_.<mark>sortBy</mark>(colors);</code>
+                <code><mark class="comment">["green", "red", "white"]</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Other little useful things</h2>
+            <ul>
+                <li>_.<code>isFunction</code></li> instead of <pre><code>typeof x === 'function'</code></pre>
+                <li>_.<code>noop</code></li> instead of <pre><code>function (){return undefined;}</code></pre>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Functional / Object Oriented</h2>
+            <pre>
+                <code>_.reject(myArray, function(num){ return num % 2 == 0; });</code>
+            </pre>
+            <pre>
+                <code>_(myArray).reject(function(num){ return num % 2 == 0; });</code>
             </pre>
         </div>
     </section>
